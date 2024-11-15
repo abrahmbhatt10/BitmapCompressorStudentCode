@@ -26,7 +26,6 @@
  *  @author Agastya Brahmbhatt
  */
 public class BitmapCompressor {
-    private static int LEN = BinaryStdIn.readInt();
     /**
      * Reads a sequence of bits from standard input, compresses them,
      * and writes the results to standard output.
@@ -34,9 +33,6 @@ public class BitmapCompressor {
     public static void compress() {
         // TODO: complete compress()
 
-        for(int i = 0; i < LEN; i++){
-
-        }
         BinaryStdOut.close();
     }
 
