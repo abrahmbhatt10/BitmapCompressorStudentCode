@@ -23,7 +23,7 @@
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  *  @author Zach Blick
- *  @author YOUR NAME HERE
+ *  @author Agastya Brahmbhatt
  */
 public class BitmapCompressor {
     private static int LEN = BinaryStdIn.readInt();
