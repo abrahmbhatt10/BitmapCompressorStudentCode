@@ -32,7 +32,6 @@ public class BitmapCompressor {
      * and writes the results to standard output.
      */
     public static void compress() {
-
         // TODO: complete compress()
 
         BinaryStdOut.close();
