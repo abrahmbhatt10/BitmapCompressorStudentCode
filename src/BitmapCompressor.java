@@ -38,11 +38,11 @@ public class BitmapCompressor {
         /*
             Below code inspired by Sedgewick & Wayne's Algorithms 4th edition
          */
-        boolean isZero, previous = false;
+        boolean previous = false, alternateZeroOrOne;
         int count = 0;
         while(!BinaryStdIn.isEmpty()){
-            isZero = BinaryStdIn.readBoolean();
-            if(isZero!= previous){
+            alternateZeroOrOne = BinaryStdIn.readBoolean();
+            if(alternateZeroOrOne!= previous){
                 BinaryStdOut.write(count, countSize);
                 count = 0;
                 previous = !previous;
@@ -68,13 +68,13 @@ public class BitmapCompressor {
         /*
             Below code inspired by Sedgewick & Wayne's Algorithms 4th edition
          */
-        boolean isZero = false;
+        boolean alternateZeroOrOne = false;
         while(!BinaryStdIn.isEmpty()){
             int count = BinaryStdIn.readInt(countSize);
             for(int i = 0; i < count; i++){
-                BinaryStdOut.write(isZero);
+                BinaryStdOut.write(alternateZeroOrOne);
             }
-            isZero = !isZero;
+            alternateZeroOrOne = !alternateZeroOrOne;
         }
         BinaryStdOut.close();
     }
