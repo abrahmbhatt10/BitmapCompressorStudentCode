@@ -47,7 +47,7 @@ public class BitmapCompressor {
                 previous = !previous;
             }
             else{
-                if(count == 16){
+                if(count == 15){
                     BinaryStdOut.write(count, countSize);
                     count = 0;
                     BinaryStdOut.write(count, countSize);
