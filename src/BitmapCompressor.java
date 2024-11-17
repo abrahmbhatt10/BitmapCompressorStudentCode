@@ -36,7 +36,11 @@ public class BitmapCompressor {
      */
     public static void compress() {
         /*
-            Below code inspired by Sedgewick & Wayne's Algorithms 4th edition
+            Below code inspired by Sedgewick & Wayne's Algorithms 4th edition.
+            The previous variable tracks the change from 0 to 1 or 1 to 0.
+            Whatever the file starts with is read in to alternateZeroOrOne.
+            The first bit could be 1 or 0. If the first bit is 1, then you
+            write the count 0 to the file and then continue the counting of 1's.
          */
         boolean previous = false, alternateZeroOrOne;
         int count = 0;
@@ -48,9 +52,20 @@ public class BitmapCompressor {
                 previous = !previous;
             }
             else{
+                /*
+                    Checks for over-flow of the count
+                    Add a count of 0 for the alternate number
+                    continue counting.
+                 */
                 if(count == MAX_COUNT){
                     BinaryStdOut.write(count, countSize);
+                    /*
+                        Reset the count
+                     */
                     count = 0;
+                    /*
+                        The alternate count is 0.
+                     */
                     BinaryStdOut.write(count, countSize);
                 }
             }
