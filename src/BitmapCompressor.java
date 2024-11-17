@@ -29,6 +29,7 @@ public class BitmapCompressor {
         max Count will be 15, an arbitrary number, using 4 bits.
      */
     private static int countSize = 4;
+    private static int MAX_COUNT = 15;
     /**
      * Reads a sequence of bits from standard input, compresses them,
      * and writes the results to standard output.
@@ -47,7 +48,7 @@ public class BitmapCompressor {
                 previous = !previous;
             }
             else{
-                if(count == 15){
+                if(count == MAX_COUNT){
                     BinaryStdOut.write(count, countSize);
                     count = 0;
                     BinaryStdOut.write(count, countSize);
