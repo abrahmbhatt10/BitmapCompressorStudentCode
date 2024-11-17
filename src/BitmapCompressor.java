@@ -55,7 +55,7 @@ public class BitmapCompressor {
             }
             count++;
         }
-        BinaryStdOut.write(count);
+        BinaryStdOut.write(count, countSize);
         BinaryStdOut.close();
     }
 
