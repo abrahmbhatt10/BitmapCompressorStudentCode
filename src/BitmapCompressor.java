@@ -19,20 +19,43 @@
 /**
  *  The {@code BitmapCompressor} class provides static methods for compressing
  *  and expanding a binary bitmap input.
- *
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  *  @author Zach Blick
  *  @author Agastya Brahmbhatt
  */
 public class BitmapCompressor {
+    /*
+        max Count will be 15, an arbitrary number, using 4 bits.
+     */
+    private static int countSize = 4;
     /**
      * Reads a sequence of bits from standard input, compresses them,
      * and writes the results to standard output.
      */
     public static void compress() {
-        // TODO: complete compress()
-
+        /*
+            Below code inspired by Sedgewick & Wayne's Algorithms 4th edition
+         */
+        boolean isZero, previous = false;
+        char count = 0;
+        while(!BinaryStdIn.isEmpty()){
+            isZero = BinaryStdIn.readBoolean();
+            if(isZero!= previous){
+                BinaryStdOut.write(count, countSize);
+                count = 0;
+                previous = !previous;
+            }
+            else{
+                if(count == 16){
+                    BinaryStdOut.write(count, countSize);
+                    count = 0;
+                    BinaryStdOut.write(count, countSize);
+                }
+            }
+            count++;
+        }
+        BinaryStdOut.write(count);
         BinaryStdOut.close();
     }
 
@@ -41,8 +64,9 @@ public class BitmapCompressor {
      * and writes the results to standard output.
      */
     public static void expand() {
-
-        // TODO: complete expand()
+        /*
+            Below code inspired by Sedgewick & Wayne's Algorithms 4th edition
+         */
 
         BinaryStdOut.close();
     }
