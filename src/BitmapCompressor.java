@@ -38,7 +38,7 @@ public class BitmapCompressor {
             Below code inspired by Sedgewick & Wayne's Algorithms 4th edition
          */
         boolean isZero, previous = false;
-        char count = 0;
+        int count = 0;
         while(!BinaryStdIn.isEmpty()){
             isZero = BinaryStdIn.readBoolean();
             if(isZero!= previous){
@@ -69,7 +69,7 @@ public class BitmapCompressor {
          */
         boolean isZero = false;
         while(!BinaryStdIn.isEmpty()){
-            char count = BinaryStdIn.readChar(countSize);
+            int count = BinaryStdIn.readInt(countSize);
             for(int i = 0; i < count; i++){
                 BinaryStdOut.write(isZero);
             }
