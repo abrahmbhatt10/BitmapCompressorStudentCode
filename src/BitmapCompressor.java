@@ -28,8 +28,8 @@ public class BitmapCompressor {
     /*
         max Count will be 15, an arbitrary number, using 4 bits.
      */
-    private static int countSize = 4;
-    private static int MAX_COUNT = 15;
+    private static int countSize = 8;
+    private static int MAX_COUNT = 255;
     /**
      * Reads a sequence of bits from standard input, compresses them,
      * and writes the results to standard output.
