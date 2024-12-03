@@ -71,6 +71,9 @@ public class BitmapCompressor {
             }
             count++;
         }
+        /*
+            Last count returned here when end of file is reached.
+         */
         BinaryStdOut.write(count, countSize);
         BinaryStdOut.close();
     }
