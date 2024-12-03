@@ -26,7 +26,7 @@
  */
 public class BitmapCompressor {
     /*
-        max Count will be 15, an arbitrary number, using 4 bits.
+        max Count will be 255, an arbitrary number, using 8 bits.
      */
     private static int countSize = 8;
     private static int MAX_COUNT = 255;
